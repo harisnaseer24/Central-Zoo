@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body style="background-image: url(/carnivore/teleferico-zoo-desktop.jpg);">
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Booking Form - The Ultimate Safari</title>
+          <script>
+            function validateForm() {
+              var firstName = document.getElementById("first-name").value;
+              var lastName = document.getElementById("last-name").value;
+              var email = document.getElementById("email").value;
+              var confirmEmail = document.getElementById("confirm-email").value;
+              var phone = document.getElementById("phone").value;
+              var pkg = document.getElementById("packages").value;
+              var person = document.getElementById("guests").value;
+         
+          
+              if (firstName == "" || lastName == "" || email == "" || confirmEmail == "" || phone == "") {
+                alert("Please fill in all required fields.");
+                return false
+            
+              }
+          
+             else if (email !== confirmEmail) {
+                alert("Email addresses do not match. Please re-enter your email.");
+                return false
+              
+              }
+          
+              else{
+              // Save form data to local storage if validation passes
+              var formData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                confirmEmail: confirmEmail,
+                phone: phone,
+                person:person,
+                packages:pkg
+              };
+              localStorage.setItem('bookingFormData', JSON.stringify(formData));
+
+            
+              // Add additional validations for other fields if necessary
+            
+             return true
+            }
+            
+         
+          }
+          </script>
+          
+
+<link rel="stylesheet" href="form.css">
+
+        </head>
+
+        <body>
+            <div style="padding-bottom: 20px;">
+          <h1>The Ultimate Safari Booking Form</h1>
+          <p style="color: rgb(87, 84, 84); background-color: rgba(255, 255, 255, 0.8);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);text-align: justify;padding: 5px;">The Ultimate Safari requires a 72-hour minimum advance booking and is subject to availability. Please fill out the form below, and a team member will call you back within the Pacific Time zone to book your high-end tour!</p>
+          
+          <form action="./bill.html" onsubmit="return validateForm()">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required><br>
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required><br>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="confirm-email">Confirm Email:</label>
+            <input type="email" id="confirm-email" name="confirm-email" required><br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+            
+            <p>Best days to contact you:</p>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Sunday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Monday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Tuesday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">wednesday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Thursday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Friday</label><br>
+            <input type="checkbox" id="sunday" name="contact-day" value="sunday">
+            <label for="sunday">Saturday</label><br>
+            <!-- Repeat the above line for the remaining days -->
+            
+            <p>Best times to contact you:</p>
+            <input type="checkbox" id="morning" name="contact-time" value="morning">
+            <label for="morning">Morning (9 a.m. to 11 a.m.)</label><br>
+            <input type="checkbox" id="Afternoon" name="contact-time" value="Afternoon">
+            <label for="morning">Afternoon (12 p.m. to 04 p.m.)</label><br>
+            
+            <!-- Repeat the above line for the remaining time options -->
+          
+            
+                      
+            <label for="visit-date">Preferred Visit Date:</label>
+            <input type="date" id="visit-date" name="visit-date" required><br>
+            
+            <p>Is your date flexible?</p>
+            <input type="checkbox" id="flexible-yes" name="flexible" value="yes">
+            <label for="flexible-yes">Yes</label><br>
+
+            <input type="checkbox" id="flexible-yes" name="flexible" value="No">
+            <label for="flexible-yes">No</label><br>
+            
+            
+            <!-- Repeat the above line for the "No" option -->
+            
+            <!-- Packages-->
+            <select name="packages" id="packages">Select your packages
+              <option value="100" selected>Safari $100</option>
+              <option value="180">Safari+ Lunch $180</option>
+              <option value="220">Safari+ Lunch + All Rides $220</option>
+            </select>
+            
+            <label for="guests">Approximate number of persons:</label>
+            <input type="number" id="guests" name="guests" required><br>
+            
+            <label for="occasion">Special Occasion (if any):</label>
+            <input type="text" id="occasion" name="occasion"><br>
+            
+            <input type="submit" value="Submit">
+          
+
+
+          </form>
+        </div>
+        </body>
+        </html>
+        
+ 
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
